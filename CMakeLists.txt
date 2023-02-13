@@ -9,7 +9,7 @@ FetchContent_Declare(
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 
-project(order_book_test LANGUAGES CXX)
+project(test_env LANGUAGES CXX)
 
 set(HEADERS
     test.h
@@ -20,15 +20,15 @@ set(SOURCES
 
 enable_testing()
 
-add_executable(order_book_test
+add_executable(test_env
     ${HEADERS}
     ${SOURCES}
     )
 
 target_link_libraries(
-  order_book_test
+  test_env
   GTest::gtest_main
 )
 
 include(GoogleTest)
-gtest_discover_tests(order_book_test)
+gtest_discover_tests(test_env)
